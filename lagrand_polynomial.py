@@ -9,7 +9,7 @@ from vpython import gcurve, exp, color, cos, gdots, graph, label
 def draw_graph_lagrange():
     # przygotowanie wykresu
     gd = graph(title='Interpolacja Lagrand\'a')
-    f1 = gcurve(graph=gd, color=color.cyan)  # a graphics curve
+    f1 = gcurve(graph=gd, color=color.cyan)
     dots = gdots(graph=gd, color=color.red)
     f2 = gcurve(graph=gd, color=color.green)
 
@@ -21,7 +21,7 @@ def draw_graph_lagrange():
 
     # wyliczanie wartości funkcji podstawowej w tym przypadku cos(2*x) * exp(-0.2 * x)
     field_end = 8.05
-    for x in arange(0, field_end, 0.1):  # x goes from 0 to 8
+    for x in arange(0, field_end, 0.1):
         y = cos(2 * x) * exp(-0.2 * x)
         f1.plot(x, y)
 
