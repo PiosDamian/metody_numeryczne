@@ -7,7 +7,7 @@ from vpython import graph, color, gcurve, gdots, cos, exp
 
 def draw_graph_newton():
     # przygotowanie wykresu
-    gd = graph(title='Interpolacja Newtona\'a')
+    gd = graph(title='Interpolacja Newtona\'a', ymin=-2, ymax=2)
     f1 = gcurve(graph=gd, color=color.cyan)
     dots = gdots(graph=gd, color=color.red)
     f2 = gcurve(graph=gd, color=color.green)
@@ -21,12 +21,11 @@ def draw_graph_newton():
     # wyliczanie wartości funkcji podstawowej w tym przypadku cos(2*x) * exp(-0.2 * x)
     field_end = 8.05
     for x in arange(0, field_end, 0.1):  # x goes from 0 to 8
-        # y = exp(-x) * cos(x)
         y = cos(2 * x) * exp(-0.2 * x)
         f1.plot(x, y)
 
         # losowanie punktów do wyliczania interpolacji - odbywa kiedy x znajduje się w przedziale 1..field_end-1
-        if 1 < x <= field_end - 1 and counter % 2 == 0 and bool(getrandbits(1)):
+        if 0.5 < x <= field_end - 0.5 and counter % 2 == 0 and bool(getrandbits(1)):
             initial_points.append({'x': x, 'y': y})
             dots.plot(x, y)
         counter = counter + 1
@@ -59,7 +58,6 @@ def multiple_summation(points, x):
     # wewnątrz następuje wylicznie kolejnych stopni an dla f(xi...x1)
     for i in range(1, len(points)):
         a_array = an_array(x_data, a_array, i)
-        print(a_array)
         result = result + a_array[0] * multiple_multiplication(points, x, i)
     return result
 
@@ -92,8 +90,9 @@ def an(t, prev_a, x, prev_x):
 
 def multiple_multiplication(points, x, field_end):
     result = 1
-    for index in range(0, field_end):
-        xj = points[index]['x']
+    # wielokrotne mnożenie po i 0..field_end
+    for i in range(0, field_end):
+        xj = points[i]['x']
         result = result * (x - xj)
     return result
 
