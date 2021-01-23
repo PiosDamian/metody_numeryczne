@@ -14,3 +14,7 @@ uruchomienie
   - cz. 2:
     
     `python zad2/czybyszew_nodes.py`
+  
+- zadanie 4:
+  - cz. 1:
+    - `python zad4/pi.py`
