@@ -2,8 +2,8 @@ from vpython import gcurve, exp, color, cos, gdots, graph, pi
 
 from numpy.ma import arange
 
-from zad2.lagrange_polynomial import lagrange_interpolation
-from zad2.newton_polynomial import newton_interpolation
+from lagrange_polynomial import lagrange_interpolation
+from newton_polynomial import newton_interpolation
 
 
 def czybyszew_points(amount, field_start, field_end):
