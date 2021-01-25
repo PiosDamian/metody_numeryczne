@@ -1,5 +1,5 @@
 from numpy.ma import arange
-from vpython import gcurve, color
+from vpython import gcurve, color, graph
 
 from integral_function import integral_function
 
@@ -17,9 +17,9 @@ def multiple_summation(start, end, n):
 
 
 def draw_graph(start, end, n=10):
-    f1 = gcurve(color=color.cyan)
+    f1 = gcurve(graph=graph(title='Metoda trapezów'), color=color.cyan)
 
-    for i in arange(-1., 1.001, 0.01):
+    for i in arange(start, end + 0.001, 0.01):
         x = round(i, 3)
         f1.plot(x, integral_function(x))
 
