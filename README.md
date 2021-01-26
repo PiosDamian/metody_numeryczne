@@ -8,13 +8,20 @@ uruchomienie
 
 - zadanie 2
   - cz. 1:
-    - `python zad2/lagrange_polynomial.py`
-    - `python zad2/newton_polynomial.py`
+    - interpolacja Lagrange'a - `python zad2/lagrange_polynomial.py`
+    - interpolacja Newton'a - `python zad2/newton_polynomial.py`
     
   - cz. 2:
     
-    `python zad2/czybyszew_nodes.py`
+    interpolacja węzłami Czybyszewa - `python zad2/czybyszew_nodes.py`
+  
+- zadanie 3:
+  - całkowanie metodą prostokątów - `python zad3/rectangle_integral.py`
+  - całkowanie metodą trapezów - `python zad3/trapeze_integral.py`
+  - całkowanie metodą Simpson'a - `python zad3/simpson_integral.py`
   
 - zadanie 4:
   - cz. 1:
-    - `python zad4/pi.py`
+    - pi okręgu wpisanego w kwadrat `python zad4/pi.py`
+  - cz. 2:
+    - całkowanie metodami Monte Carlo - `python zad3/monte_carlo_integral.pi`
